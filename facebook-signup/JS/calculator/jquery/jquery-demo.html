@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            border: 1px solid;
+            background-color:aqua;
+        }
+    </style>
+</head>
+<body>
+    <button id="testBtn">Click me</button>
+    <div class="box"></div>
+    <input type="text" id="name">
+    <div class="error" style="display: none;">Please enter minimum 4 letters</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="jquery/js/script.js"></script>
+<script>
+$(document).ready(function(){
+  $('#testBtn').click(function(){
+    //  alert('Welcome!');
+    $('.box').fadeToggle(1000);
+  });
+$('.box').mouseenter(function() {
+     $(this).css("background-color","red");
+  });
+  $('.box').mouseleave(function() {
+     $(this).css("background-color","blue");
+  });
+  $('#name').blur(function() {
+    var userInput = $(this).val();
+    if(userInput.length < 3){
+        $('.error').show()
+    }
+    
+    // } else {
+    //     $('.error').hide();
+    // }
+        // console.log(userInput);
+
+        // alert('Please enter minimum 4 letters')
+    
+  });
+});
+</script> 
+
+
+</body>
+</html>

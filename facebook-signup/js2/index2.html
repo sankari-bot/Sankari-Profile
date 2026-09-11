@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesfacebook.css">
+</head>
+<body>
+    <div class="main-div">
+        <h1 id="logo">facebook</h1>
+        <form id="signup">
+           <div class="signup-form">
+                <div class="form-heading">
+                    <h2>Create a new account</h2>
+                    <p>It's quick and easy.</p>
+                </div>
+                <div class="input-fields">
+                    <div class="half-width"><input type="text" placeholder="First name" name="fname"/></div>
+                    <div class="half-width"><input type="text" placeholder="Sur name" name="sname"/></div>
+                </div>
+                <div class="full-width"><input type="text" placeholder="Mobile number or email address" name="mobile"/></div>    
+                <div class="full-width"><input type="password" placeholder="New password" name="password"></div>
+                
+                <label class="small-label">Date of birth</label>
+                <div class="dob-div">
+                    <div class="quat-width">
+                        <select  name="day">
+                        <option value="">choose</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                    <div class="quat-width">
+                        <select name="month">
+                        <option value="">choose</option>
+                        <option value="Jan">Jan</option>
+                        <option value="Feb">Feb</option>
+                    </select>
+                </div>
+                    <div class="quat-width">
+                        <select name="year">
+                            <option value="">choose</option>
+                            <option value="1999">1999</option>
+                            <option value="1998">1998</option>
+                           </select>
+                        </div>
+                </div>
+
+                <label class="small-label">Gender</label>
+                <div class="dob-div">
+                  <div class="quat-width gender-box"><label>Female</label><input type="radio" name="gender"></div>
+                  <div class="quat-width gender-box"><label>Male</label><input type="radio" name="gender"></div>
+                  <div class="quat-width gender-box"><label>Custom</label><input type="radio" name="gender"></div>
+                </div>
+
+                
+                <small style="display:block; font-size:12px; color:#777; margin-top:15px; padding: 0 15px;">People who use our service may have uploaded your contact information to Facebook. <a href="#">Learn more</a></small>
+                <small style="display:block; font-size:12px; color:grey; margin-top:10px; padding: 0 15px;">By clicking Sign up, you agree to our Terms, Privacy Policy and Cookies Policy.</small>    
+                
+                <div class="button-div">
+                    <button class="signup-btn">Sign up</button>
+                </div>
+                <div class="account-div">
+                    <a href="#">Already have an account?</a>
+                </div>
+           </div>
+        </form>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#signup").validate({
+    rules: {
+      fname: { required: true, minlength: 3 },
+      sname: { required: true, minlength: 3 },
+      mobile: { required: true, minlength: 10 },
+      password: { required: true, minlength: 8 },
+      day: { required: true },
+      month: { required: true },
+      year: { required: true }
+    },
+    messages: {
+      fname: {
+        required: "Please enter the first name.",
+        minlength: "Please enter minimum 5 letters for first name."
+      },
+      sname: {
+        required: "This field is required.",
+        minlength: "Please enter your sname."
+      },
+      mobile: {
+        required: "This number is required.",
+        minlength: "Please enter 10 digits."
+      },
+      password: {
+        required: "This field is required.",
+        minlength: "Please enter 8 characters."
+      },
+      day: { required: "Select day" },
+      month: { required: "Select month" },
+      year: { required: "Select year" },
+      gender: { required: "Select gender"}
+    }
+  });
+});
+</script>
+</body>
+</html>
